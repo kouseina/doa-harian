@@ -1,8 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:doa_harian/app_colors.dart';
+import 'package:doa_harian/routes/app_router.dart';
 import 'package:doa_harian/utils/assets.dart';
 import 'package:doa_harian/widgets/main_button.dart';
 import 'package:flutter/material.dart';
 
+@RoutePage()
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
 
@@ -71,7 +74,10 @@ class IntroPage extends StatelessWidget {
                   const SizedBox(
                     height: 24,
                   ),
-                  const MainButton(
+                  MainButton(
+                    onTap: () {
+                      context.router.push(const HomeRoute());
+                    },
                     text: "MULAI BELAJAR DOA",
                   ),
                 ],

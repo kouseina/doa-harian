@@ -1,15 +1,16 @@
 import 'package:doa_harian/modules/intro/intro_page.dart';
+import 'package:doa_harian/routes/app_router.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class App extends StatelessWidget {
-  const App({super.key});
+  App({super.key});
+
+  final _appRouter = AppRouter();
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: IntroPage(),
+    return MaterialApp.router(
+      routerConfig: _appRouter.config(),
     );
   }
 }
