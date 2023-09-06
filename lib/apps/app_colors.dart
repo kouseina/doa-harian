@@ -17,4 +17,13 @@ class AppColors {
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
   );
+
+  static LinearGradient redGradient = const LinearGradient(
+    colors: [
+      Color(0xffFF7070),
+      Color(0xffC90024),
+    ],
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+  );
 }

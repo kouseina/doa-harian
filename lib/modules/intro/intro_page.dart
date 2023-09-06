@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:doa_harian/app_colors.dart';
+import 'package:doa_harian/apps/app_colors.dart';
 import 'package:doa_harian/routes/app_router.dart';
 import 'package:doa_harian/utils/assets.dart';
 import 'package:doa_harian/widgets/main_button.dart';
@@ -17,7 +17,7 @@ class IntroPage extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AppAssets.imgIntroPng,
+              image: Assets.imgIntroPng,
               alignment: Alignment.topCenter,
             ),
           ),

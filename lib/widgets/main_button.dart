@@ -1,4 +1,4 @@
-import 'package:doa_harian/app_colors.dart';
+import 'package:doa_harian/apps/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class MainButton extends StatelessWidget {
@@ -28,12 +28,9 @@ class MainButton extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: const TextStyle(
-              fontFamily: "Rubik",
-              color: Colors.white,
-              fontWeight: FontWeight.w800,
-              fontSize: 16,
-            ),
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  fontWeight: FontWeight.w800,
+                ),
           ),
         ),
       ),
