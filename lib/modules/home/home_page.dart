@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:doa_harian/apps/app_colors.dart';
+import 'package:doa_harian/models/prayer.dart';
 import 'package:doa_harian/utils/assets.dart';
 import 'package:doa_harian/utils/utility.dart';
 import 'package:doa_harian/widgets/main_button.dart';
@@ -16,6 +17,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<Prayer> prayerList = [];
+
   @override
   void initState() {
     // TODO: implement initState
@@ -28,7 +31,10 @@ class _HomePageState extends State<HomePage> {
     final response = await Utility.readJsonFile(path: Assets.jsonPrayer);
 
     try {
-      developer.log(response.toString(), name: "home_page");
+      setState(() {
+        prayerList =
+            (response["data"] as List).map((e) => Prayer.fromJson(e)).toList();
+      });
     } catch (e) {}
   }
 
@@ -115,72 +121,87 @@ class _HomePageState extends State<HomePage> {
                                   fontWeight: FontWeight.w800,
                                 ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 24,
                       ),
-                      Container(
-                        padding: const EdgeInsets.all(24),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(24),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: Container(
-                                width: double.infinity,
-                                height: 120,
-                                decoration: BoxDecoration(
+                      ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: prayerList.length,
+                        itemBuilder: (context, index) {
+                          final item = prayerList[index];
+
+                          return Container(
+                            margin: const EdgeInsets.only(bottom: 24),
+                            padding: const EdgeInsets.all(24),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(24),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                ClipRRect(
                                   borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(
-                                    color: const Color(0xffAFB1B6),
-                                    width: 2,
+                                  child: Container(
+                                    width: double.infinity,
+                                    height: 120,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8),
+                                      border: Border.all(
+                                        color: const Color(0xffAFB1B6),
+                                        width: 2,
+                                      ),
+                                      color: const Color(0xffF4F4F4),
+                                    ),
+                                    child: item.imageAsset == null
+                                        ? Image.asset(
+                                            Assets.icImagePng.assetName,
+                                          )
+                                        : Image.asset(
+                                            item.imageAsset ?? "",
+                                            fit: BoxFit.cover,
+                                          ),
                                   ),
                                 ),
-                                child: Image.asset(
-                                  Assets.imgItemEatJpg.assetName,
-                                  fit: BoxFit.cover,
+                                const SizedBox(
+                                  height: 16,
                                 ),
-                              ),
+                                Text(
+                                  item.title ?? "",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium
+                                      ?.copyWith(
+                                        fontWeight: FontWeight.w800,
+                                        color: AppColors.black,
+                                      ),
+                                ),
+                                const SizedBox(
+                                  height: 4,
+                                ),
+                                Text(
+                                  item.desc ?? "",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodySmall
+                                      ?.copyWith(color: AppColors.grey2),
+                                  maxLines: 3,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                const SizedBox(
+                                  height: 16,
+                                ),
+                                MainButton(
+                                  onTap: () {},
+                                  text: "BACA DOA INI",
+                                  borderRadius: 8,
+                                ),
+                              ],
                             ),
-                            const SizedBox(
-                              height: 16,
-                            ),
-                            Text(
-                              "DOA SEBELUM  MAKAN",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleMedium
-                                  ?.copyWith(
-                                    fontWeight: FontWeight.w800,
-                                    color: AppColors.black,
-                                  ),
-                            ),
-                            const SizedBox(
-                              height: 4,
-                            ),
-                            Text(
-                              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodySmall
-                                  ?.copyWith(color: AppColors.grey2),
-                              maxLines: 3,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                            const SizedBox(
-                              height: 16,
-                            ),
-                            MainButton(
-                              onTap: () {},
-                              text: "BACA DOA INI",
-                              borderRadius: 8,
-                            ),
-                          ],
-                        ),
-                      ),
+                          );
+                        },
+                      )
                     ],
                   ),
                 ),
