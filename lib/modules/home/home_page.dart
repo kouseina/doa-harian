@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:doa_harian/apps/app_colors.dart';
+import 'package:doa_harian/models/cubit/prayer_cubit.dart';
 import 'package:doa_harian/models/prayer.dart';
 import 'package:doa_harian/utils/assets.dart';
 import 'package:doa_harian/utils/utility.dart';
@@ -7,6 +8,8 @@ import 'package:doa_harian/widgets/main_button.dart';
 import 'package:flutter/material.dart';
 
 import 'dart:developer' as developer;
+
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
 class HomePage extends StatefulWidget {
@@ -17,25 +20,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Prayer> prayerList = [];
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
 
-    getPrayerItems();
-  }
-
-  void getPrayerItems() async {
-    final response = await Utility.readJsonFile(path: Assets.jsonPrayer);
-
-    try {
-      setState(() {
-        prayerList =
-            (response["data"] as List).map((e) => Prayer.fromJson(e)).toList();
-      });
-    } catch (e) {}
+    context.read<PrayerCubit>().getList();
   }
 
   @override
@@ -124,81 +114,109 @@ class _HomePageState extends State<HomePage> {
                       const SizedBox(
                         height: 24,
                       ),
-                      ListView.builder(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemCount: prayerList.length,
-                        itemBuilder: (context, index) {
-                          final item = prayerList[index];
+                      BlocConsumer<PrayerCubit, PrayerState>(
+                        listener: (context, state) {},
+                        builder: (context, state) {
+                          return state.when(
+                            initial: (list) => const Center(
+                              child: CircularProgressIndicator(),
+                            ),
+                            loading: () => const Center(
+                              child: CircularProgressIndicator(),
+                            ),
+                            error: (message) {
+                              return Text(
+                                message,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium
+                                    ?.copyWith(color: Colors.red.shade500),
+                              );
+                            },
+                            success: (list) {
+                              return ListView.builder(
+                                shrinkWrap: true,
+                                physics: const NeverScrollableScrollPhysics(),
+                                itemCount: list.length,
+                                itemBuilder: (context, index) {
+                                  final item = list[index];
 
-                          return Container(
-                            margin: const EdgeInsets.only(bottom: 24),
-                            padding: const EdgeInsets.all(24),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(24),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(8),
-                                  child: Container(
-                                    width: double.infinity,
-                                    height: 120,
+                                  return Container(
+                                    margin: const EdgeInsets.only(bottom: 24),
+                                    padding: const EdgeInsets.all(24),
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: const Color(0xffAFB1B6),
-                                        width: 2,
-                                      ),
-                                      color: const Color(0xffF4F4F4),
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(24),
                                     ),
-                                    child: item.imageAsset == null
-                                        ? Image.asset(
-                                            Assets.icImagePng.assetName,
-                                          )
-                                        : Image.asset(
-                                            item.imageAsset ?? "",
-                                            fit: BoxFit.cover,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                          child: Container(
+                                            width: double.infinity,
+                                            height: 120,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(8),
+                                              border: Border.all(
+                                                color: const Color(0xffAFB1B6),
+                                                width: 2,
+                                              ),
+                                              color: const Color(0xffF4F4F4),
+                                            ),
+                                            child: item.imageAsset == null
+                                                ? Image.asset(
+                                                    Assets.icImagePng.assetName,
+                                                  )
+                                                : Image.asset(
+                                                    item.imageAsset ?? "",
+                                                    fit: BoxFit.cover,
+                                                  ),
                                           ),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 16,
-                                ),
-                                Text(
-                                  item.title ?? "",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleMedium
-                                      ?.copyWith(
-                                        fontWeight: FontWeight.w800,
-                                        color: AppColors.black,
-                                      ),
-                                ),
-                                const SizedBox(
-                                  height: 4,
-                                ),
-                                Text(
-                                  item.desc ?? "",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall
-                                      ?.copyWith(color: AppColors.grey2),
-                                  maxLines: 3,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                                const SizedBox(
-                                  height: 16,
-                                ),
-                                MainButton(
-                                  onTap: () {},
-                                  text: "BACA DOA INI",
-                                  borderRadius: 8,
-                                ),
-                              ],
-                            ),
+                                        ),
+                                        const SizedBox(
+                                          height: 16,
+                                        ),
+                                        Text(
+                                          item.title ?? "",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .titleMedium
+                                              ?.copyWith(
+                                                fontWeight: FontWeight.w800,
+                                                color: AppColors.black,
+                                              ),
+                                        ),
+                                        const SizedBox(
+                                          height: 4,
+                                        ),
+                                        Text(
+                                          item.desc ?? "",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodySmall
+                                              ?.copyWith(
+                                                  color: AppColors.grey2),
+                                          maxLines: 3,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                        const SizedBox(
+                                          height: 16,
+                                        ),
+                                        MainButton(
+                                          onTap: () {},
+                                          text: "BACA DOA INI",
+                                          borderRadius: 8,
+                                        ),
+                                      ],
+                                    ),
+                                  );
+                                },
+                              );
+                            },
                           );
                         },
                       )
