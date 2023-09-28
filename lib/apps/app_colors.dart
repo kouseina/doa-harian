@@ -7,6 +7,7 @@ class AppColors {
   static Color greyBg = const Color(0xffF6F4F9);
   static Color grey1 = const Color(0xffDDDBE0);
   static Color grey2 = const Color(0xffB4B1BD);
+  static Color orange = const Color(0xffFF7612);
 
   static LinearGradient orangeGradient = const LinearGradient(
     colors: [
@@ -22,6 +23,15 @@ class AppColors {
     colors: [
       Color(0xffFF7070),
       Color(0xffC90024),
+    ],
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+  );
+
+  static LinearGradient greyGradient = const LinearGradient(
+    colors: [
+      Color(0xffFFFFFF),
+      Color(0xffDDDDDD),
     ],
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,

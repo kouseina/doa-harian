@@ -17,7 +17,7 @@ class IntroPage extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: Assets.imgIntroPng,
+              image: Assets.bgIntroPng,
               alignment: Alignment.topCenter,
             ),
           ),

@@ -1,9 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:doa_harian/apps/app_colors.dart';
-import 'package:doa_harian/models/cubit/prayer_cubit.dart';
-import 'package:doa_harian/models/prayer.dart';
+import 'package:doa_harian/cubit/prayer_cubit.dart';
+import 'package:doa_harian/routes/app_router.dart';
 import 'package:doa_harian/utils/assets.dart';
-import 'package:doa_harian/utils/utility.dart';
 import 'package:doa_harian/widgets/main_button.dart';
 import 'package:flutter/material.dart';
 
@@ -40,7 +39,7 @@ class _HomePageState extends State<HomePage> {
               width: double.infinity,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: Assets.imgHomeJpg,
+                  image: Assets.bgHomeJpg,
                   fit: BoxFit.cover,
                   alignment: Alignment.topCenter,
                 ),
@@ -119,10 +118,12 @@ class _HomePageState extends State<HomePage> {
                         builder: (context, state) {
                           return state.when(
                             initial: (list) => const Center(
-                              child: CircularProgressIndicator(),
+                              child: CircularProgressIndicator(
+                                  color: Colors.white),
                             ),
                             loading: () => const Center(
-                              child: CircularProgressIndicator(),
+                              child: CircularProgressIndicator(
+                                  color: Colors.white),
                             ),
                             error: (message) {
                               return Text(
@@ -207,7 +208,10 @@ class _HomePageState extends State<HomePage> {
                                           height: 16,
                                         ),
                                         MainButton(
-                                          onTap: () {},
+                                          onTap: () {
+                                            context.router
+                                                .push(const DetailRoute());
+                                          },
                                           text: "BACA DOA INI",
                                           borderRadius: 8,
                                         ),
