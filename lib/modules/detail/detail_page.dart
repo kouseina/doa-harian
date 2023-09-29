@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:doa_harian/apps/app_colors.dart';
 import 'package:doa_harian/bloc/counter_bloc.dart';
+import 'package:doa_harian/models/prayer.dart';
 import 'package:doa_harian/modules/detail/first_page.dart';
 import 'package:doa_harian/modules/detail/second_page.dart';
 import 'package:doa_harian/utils/assets.dart';
@@ -10,7 +11,9 @@ import 'dart:developer' as developer;
 
 @RoutePage()
 class DetailPage extends StatefulWidget {
-  const DetailPage({super.key});
+  const DetailPage({super.key, required this.prayer});
+
+  final Prayer prayer;
 
   @override
   State<DetailPage> createState() => _DetailPageState();
@@ -45,7 +48,7 @@ class _DetailPageState extends State<DetailPage> {
         controller: pageController,
         children: [
           FirstPage(pageController: pageController),
-          const SecondPage(),
+          SecondPage(prayer: widget.prayer),
         ],
       ),
     );

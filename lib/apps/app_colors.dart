@@ -36,4 +36,13 @@ class AppColors {
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
   );
+
+  static LinearGradient purpleGradient = LinearGradient(
+    colors: [
+      purple2.withOpacity(0),
+      purple2,
+    ],
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+  );
 }

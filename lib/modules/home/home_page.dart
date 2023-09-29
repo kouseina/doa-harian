@@ -209,8 +209,11 @@ class _HomePageState extends State<HomePage> {
                                         ),
                                         MainButton(
                                           onTap: () {
-                                            context.router
-                                                .push(const DetailRoute());
+                                            context.router.push(
+                                              DetailRoute(
+                                                prayer: item,
+                                              ),
+                                            );
                                           },
                                           text: "BACA DOA INI",
                                           borderRadius: 8,

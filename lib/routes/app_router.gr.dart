@@ -16,9 +16,13 @@ abstract class _$AppRouter extends RootStackRouter {
   @override
   final Map<String, PageFactory> pagesMap = {
     DetailRoute.name: (routeData) {
+      final args = routeData.argsAs<DetailRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const DetailPage(),
+        child: DetailPage(
+          key: args.key,
+          prayer: args.prayer,
+        ),
       );
     },
     HomeRoute.name: (routeData) {
@@ -38,16 +42,39 @@ abstract class _$AppRouter extends RootStackRouter {
 
 /// generated route for
 /// [DetailPage]
-class DetailRoute extends PageRouteInfo<void> {
-  const DetailRoute({List<PageRouteInfo>? children})
-      : super(
+class DetailRoute extends PageRouteInfo<DetailRouteArgs> {
+  DetailRoute({
+    Key? key,
+    required Prayer prayer,
+    List<PageRouteInfo>? children,
+  }) : super(
           DetailRoute.name,
+          args: DetailRouteArgs(
+            key: key,
+            prayer: prayer,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'DetailRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<DetailRouteArgs> page = PageInfo<DetailRouteArgs>(name);
+}
+
+class DetailRouteArgs {
+  const DetailRouteArgs({
+    this.key,
+    required this.prayer,
+  });
+
+  final Key? key;
+
+  final Prayer prayer;
+
+  @override
+  String toString() {
+    return 'DetailRouteArgs{key: $key, prayer: $prayer}';
+  }
 }
 
 /// generated route for

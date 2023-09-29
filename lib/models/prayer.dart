@@ -11,19 +11,29 @@ class Prayer with _$Prayer {
     String? title,
     String? desc,
     @JsonKey(name: 'image_asset') String? imageAsset,
-    @JsonKey(name: 'prayer_full') PrayerFull? prayerFull,
+    @JsonKey(name: 'prayer_content') PrayerContent? prayerContent,
   }) = _Prayer;
 
   factory Prayer.fromJson(Map<String, dynamic> json) => _$PrayerFromJson(json);
 }
 
 @freezed
-class PrayerFull with _$PrayerFull {
-  factory PrayerFull({
+class PrayerContent with _$PrayerContent {
+  factory PrayerContent({
+    PrayerItem? full,
+    List<PrayerItem>? fragment,
+  }) = _PrayerContent;
+
+  factory PrayerContent.fromJson(Map<String, dynamic> json) => _$PrayerContentFromJson(json);
+}
+
+@freezed
+class PrayerItem with _$PrayerItem {
+  factory PrayerItem({
     String? hijaiyah,
     String? latin,
     String? indo,
-  }) = _PrayerFull;
+  }) = _PrayerItem;
 
-  factory PrayerFull.fromJson(Map<String, dynamic> json) => _$PrayerFullFromJson(json);
+  factory PrayerItem.fromJson(Map<String, dynamic> json) => _$PrayerItemFromJson(json);
 }

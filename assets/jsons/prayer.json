@@ -4,40 +4,176 @@
             "title": "DOA SEBELUM MAKAN",
             "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in",
             "image_asset": "assets/images/img_item_eat.jpg",
-            "prayer_full": {
-                "hijaiyah": "اَللّٰهُمَّ بَارِكْ لَنَا فِيْمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ",
-                "latin": "“Allâhumma bârik lanâ fî mâ razaqtanâ wa qinâ adzâban nâr”",
-                "indo": "“Ya Allah, berkahilah kami dalam rezeki yang telah Engkau berikan kepada kami dan peliharalah kami dari siksa api neraka”"
+            "prayer_content": {
+                "full": {
+                    "hijaiyah": "اَللّٰهُمَّ بَارِكْ لَنَا فِيْمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ",
+                    "latin": "“Allâhumma bârik lanâ fî mâ razaqtanâ wa qinâ adzâban nâr”",
+                    "indo": "“Ya Allah, berkahilah kami dalam rezeki yang telah Engkau berikan kepada kami dan peliharalah kami dari siksa api neraka”"
+                },
+                "fragment": [
+                    {
+                        "hijaiyah": "اَللّٰهُمَّ",
+                        "latin": "“Allâhumma”",
+                        "indo": "“Ya Allah”"
+                    },
+                    {
+                        "hijaiyah": "بَارِكْ لَنَا",
+                        "latin": "“bârik lanâ”",
+                        "indo": "“berkahilah kami”"
+                    },
+                    {
+                        "hijaiyah": "فِيْمَا",
+                        "latin": "“fî mâ”",
+                        "indo": "“dalam”"
+                    },
+                    {
+                        "hijaiyah": "رَزَقْتَنَا",
+                        "latin": "“razaqtanâ”",
+                        "indo": "“rezeki yang telah engkau berikan kepada kami”"
+                    },
+                    {
+                        "hijaiyah": "وَقِنَا",
+                        "latin": "“wa qinâ”",
+                        "indo": "“dan peliharalah kami dari”"
+                    },
+                    {
+                        "hijaiyah": "عَذَابَ النَّارِ",
+                        "latin": "“adzâban nâr”",
+                        "indo": "“siksa api neraka”"
+                    }
+                ]
             }
         },
         {
             "title": "DOA SESUDAH MAKAN",
             "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in",
             "image_asset": "assets/images/img_item_eat.jpg",
-            "prayer_full": {
-                "hijaiyah": "اَللّٰهُمَّ بَارِكْ لَنَا فِيْمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ",
-                "latin": "“Allâhumma bârik lanâ fî mâ razaqtanâ wa qinâ adzâban nâr”",
-                "indo": "“Ya Allah, berkahilah kami dalam rezeki yang telah Engkau berikan kepada kami dan peliharalah kami dari siksa api neraka”"
+            "prayer_content": {
+                "full": {
+                    "hijaiyah": "اَللّٰهُمَّ بَارِكْ لَنَا فِيْمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ",
+                    "latin": "“Allâhumma bârik lanâ fî mâ razaqtanâ wa qinâ adzâban nâr”",
+                    "indo": "“Ya Allah, berkahilah kami dalam rezeki yang telah Engkau berikan kepada kami dan peliharalah kami dari siksa api neraka”"
+                },
+                "fragment": [
+                    {
+                        "hijaiyah": "اَللّٰهُمَّ",
+                        "latin": "“Allâhumma”",
+                        "indo": "“Ya Allah”"
+                    },
+                    {
+                        "hijaiyah": "بَارِكْ لَنَا",
+                        "latin": "“bârik lanâ”",
+                        "indo": "“berkahilah kami”"
+                    },
+                    {
+                        "hijaiyah": "فِيْمَا",
+                        "latin": "“fî mâ”",
+                        "indo": "“dalam”"
+                    },
+                    {
+                        "hijaiyah": "رَزَقْتَنَا",
+                        "latin": "“razaqtanâ”",
+                        "indo": "“rezeki yang telah engkau berikan kepada kami”"
+                    },
+                    {
+                        "hijaiyah": "وَقِنَا",
+                        "latin": "“wa qinâ”",
+                        "indo": "“dan peliharalah kami dari”"
+                    },
+                    {
+                        "hijaiyah": "عَذَابَ النَّارِ",
+                        "latin": "“adzâban nâr”",
+                        "indo": "“siksa api neraka”"
+                    }
+                ]
             }
         },
         {
             "title": "DOA KETIKA MASUK MASJID",
             "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in",
             "image_asset": null,
-            "prayer_full": {
-                "hijaiyah": "اَللّٰهُمَّ بَارِكْ لَنَا فِيْمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ",
-                "latin": "“Allâhumma bârik lanâ fî mâ razaqtanâ wa qinâ adzâban nâr”",
-                "indo": "“Ya Allah, berkahilah kami dalam rezeki yang telah Engkau berikan kepada kami dan peliharalah kami dari siksa api neraka”"
+            "prayer_content": {
+                "full": {
+                    "hijaiyah": "اَللّٰهُمَّ بَارِكْ لَنَا فِيْمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ",
+                    "latin": "“Allâhumma bârik lanâ fî mâ razaqtanâ wa qinâ adzâban nâr”",
+                    "indo": "“Ya Allah, berkahilah kami dalam rezeki yang telah Engkau berikan kepada kami dan peliharalah kami dari siksa api neraka”"
+                },
+                "fragment": [
+                    {
+                        "hijaiyah": "اَللّٰهُمَّ",
+                        "latin": "“Allâhumma”",
+                        "indo": "“Ya Allah”"
+                    },
+                    {
+                        "hijaiyah": "بَارِكْ لَنَا",
+                        "latin": "“bârik lanâ”",
+                        "indo": "“berkahilah kami”"
+                    },
+                    {
+                        "hijaiyah": "فِيْمَا",
+                        "latin": "“fî mâ”",
+                        "indo": "“dalam”"
+                    },
+                    {
+                        "hijaiyah": "رَزَقْتَنَا",
+                        "latin": "“razaqtanâ”",
+                        "indo": "“rezeki yang telah engkau berikan kepada kami”"
+                    },
+                    {
+                        "hijaiyah": "وَقِنَا",
+                        "latin": "“wa qinâ”",
+                        "indo": "“dan peliharalah kami dari”"
+                    },
+                    {
+                        "hijaiyah": "عَذَابَ النَّارِ",
+                        "latin": "“adzâban nâr”",
+                        "indo": "“siksa api neraka”"
+                    }
+                ]
             }
         },
         {
             "title": "DOA KETIKA KELUAR MASJID",
             "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in",
             "image_asset": null,
-            "prayer_full": {
-                "hijaiyah": "اَللّٰهُمَّ بَارِكْ لَنَا فِيْمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ",
-                "latin": "“Allâhumma bârik lanâ fî mâ razaqtanâ wa qinâ adzâban nâr”",
-                "indo": "“Ya Allah, berkahilah kami dalam rezeki yang telah Engkau berikan kepada kami dan peliharalah kami dari siksa api neraka”"
+            "prayer_content": {
+                "full": {
+                    "hijaiyah": "اَللّٰهُمَّ بَارِكْ لَنَا فِيْمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ",
+                    "latin": "“Allâhumma bârik lanâ fî mâ razaqtanâ wa qinâ adzâban nâr”",
+                    "indo": "“Ya Allah, berkahilah kami dalam rezeki yang telah Engkau berikan kepada kami dan peliharalah kami dari siksa api neraka”"
+                },
+                "fragment": [
+                    {
+                        "hijaiyah": "اَللّٰهُمَّ",
+                        "latin": "“Allâhumma”",
+                        "indo": "“Ya Allah”"
+                    },
+                    {
+                        "hijaiyah": "بَارِكْ لَنَا",
+                        "latin": "“bârik lanâ”",
+                        "indo": "“berkahilah kami”"
+                    },
+                    {
+                        "hijaiyah": "فِيْمَا",
+                        "latin": "“fî mâ”",
+                        "indo": "“dalam”"
+                    },
+                    {
+                        "hijaiyah": "رَزَقْتَنَا",
+                        "latin": "“razaqtanâ”",
+                        "indo": "“rezeki yang telah engkau berikan kepada kami”"
+                    },
+                    {
+                        "hijaiyah": "وَقِنَا",
+                        "latin": "“wa qinâ”",
+                        "indo": "“dan peliharalah kami dari”"
+                    },
+                    {
+                        "hijaiyah": "عَذَابَ النَّارِ",
+                        "latin": "“adzâban nâr”",
+                        "indo": "“siksa api neraka”"
+                    }
+                ]
             }
         }
     ]

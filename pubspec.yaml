@@ -103,6 +103,9 @@ flutter:
           weight: 800
         - asset: assets/fonts/Rubik-Black.ttf
           weight: 900
+    - family: NotoSansArabic
+      fonts:
+        - asset: assets/fonts/NotoSansArabic-ExtraBold.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

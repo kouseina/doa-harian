@@ -24,8 +24,8 @@ mixin _$Prayer {
   String? get desc => throw _privateConstructorUsedError;
   @JsonKey(name: 'image_asset')
   String? get imageAsset => throw _privateConstructorUsedError;
-  @JsonKey(name: 'prayer_full')
-  PrayerFull? get prayerFull => throw _privateConstructorUsedError;
+  @JsonKey(name: 'prayer_content')
+  PrayerContent? get prayerContent => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,9 +41,9 @@ abstract class $PrayerCopyWith<$Res> {
       {String? title,
       String? desc,
       @JsonKey(name: 'image_asset') String? imageAsset,
-      @JsonKey(name: 'prayer_full') PrayerFull? prayerFull});
+      @JsonKey(name: 'prayer_content') PrayerContent? prayerContent});
 
-  $PrayerFullCopyWith<$Res>? get prayerFull;
+  $PrayerContentCopyWith<$Res>? get prayerContent;
 }
 
 /// @nodoc
@@ -62,7 +62,7 @@ class _$PrayerCopyWithImpl<$Res, $Val extends Prayer>
     Object? title = freezed,
     Object? desc = freezed,
     Object? imageAsset = freezed,
-    Object? prayerFull = freezed,
+    Object? prayerContent = freezed,
   }) {
     return _then(_value.copyWith(
       title: freezed == title
@@ -77,22 +77,22 @@ class _$PrayerCopyWithImpl<$Res, $Val extends Prayer>
           ? _value.imageAsset
           : imageAsset // ignore: cast_nullable_to_non_nullable
               as String?,
-      prayerFull: freezed == prayerFull
-          ? _value.prayerFull
-          : prayerFull // ignore: cast_nullable_to_non_nullable
-              as PrayerFull?,
+      prayerContent: freezed == prayerContent
+          ? _value.prayerContent
+          : prayerContent // ignore: cast_nullable_to_non_nullable
+              as PrayerContent?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $PrayerFullCopyWith<$Res>? get prayerFull {
-    if (_value.prayerFull == null) {
+  $PrayerContentCopyWith<$Res>? get prayerContent {
+    if (_value.prayerContent == null) {
       return null;
     }
 
-    return $PrayerFullCopyWith<$Res>(_value.prayerFull!, (value) {
-      return _then(_value.copyWith(prayerFull: value) as $Val);
+    return $PrayerContentCopyWith<$Res>(_value.prayerContent!, (value) {
+      return _then(_value.copyWith(prayerContent: value) as $Val);
     });
   }
 }
@@ -107,10 +107,10 @@ abstract class _$$_PrayerCopyWith<$Res> implements $PrayerCopyWith<$Res> {
       {String? title,
       String? desc,
       @JsonKey(name: 'image_asset') String? imageAsset,
-      @JsonKey(name: 'prayer_full') PrayerFull? prayerFull});
+      @JsonKey(name: 'prayer_content') PrayerContent? prayerContent});
 
   @override
-  $PrayerFullCopyWith<$Res>? get prayerFull;
+  $PrayerContentCopyWith<$Res>? get prayerContent;
 }
 
 /// @nodoc
@@ -126,7 +126,7 @@ class __$$_PrayerCopyWithImpl<$Res>
     Object? title = freezed,
     Object? desc = freezed,
     Object? imageAsset = freezed,
-    Object? prayerFull = freezed,
+    Object? prayerContent = freezed,
   }) {
     return _then(_$_Prayer(
       title: freezed == title
@@ -141,10 +141,10 @@ class __$$_PrayerCopyWithImpl<$Res>
           ? _value.imageAsset
           : imageAsset // ignore: cast_nullable_to_non_nullable
               as String?,
-      prayerFull: freezed == prayerFull
-          ? _value.prayerFull
-          : prayerFull // ignore: cast_nullable_to_non_nullable
-              as PrayerFull?,
+      prayerContent: freezed == prayerContent
+          ? _value.prayerContent
+          : prayerContent // ignore: cast_nullable_to_non_nullable
+              as PrayerContent?,
     ));
   }
 }
@@ -156,7 +156,7 @@ class _$_Prayer implements _Prayer {
       {this.title,
       this.desc,
       @JsonKey(name: 'image_asset') this.imageAsset,
-      @JsonKey(name: 'prayer_full') this.prayerFull});
+      @JsonKey(name: 'prayer_content') this.prayerContent});
 
   factory _$_Prayer.fromJson(Map<String, dynamic> json) =>
       _$$_PrayerFromJson(json);
@@ -169,12 +169,12 @@ class _$_Prayer implements _Prayer {
   @JsonKey(name: 'image_asset')
   final String? imageAsset;
   @override
-  @JsonKey(name: 'prayer_full')
-  final PrayerFull? prayerFull;
+  @JsonKey(name: 'prayer_content')
+  final PrayerContent? prayerContent;
 
   @override
   String toString() {
-    return 'Prayer(title: $title, desc: $desc, imageAsset: $imageAsset, prayerFull: $prayerFull)';
+    return 'Prayer(title: $title, desc: $desc, imageAsset: $imageAsset, prayerContent: $prayerContent)';
   }
 
   @override
@@ -186,14 +186,14 @@ class _$_Prayer implements _Prayer {
             (identical(other.desc, desc) || other.desc == desc) &&
             (identical(other.imageAsset, imageAsset) ||
                 other.imageAsset == imageAsset) &&
-            (identical(other.prayerFull, prayerFull) ||
-                other.prayerFull == prayerFull));
+            (identical(other.prayerContent, prayerContent) ||
+                other.prayerContent == prayerContent));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, title, desc, imageAsset, prayerFull);
+      Object.hash(runtimeType, title, desc, imageAsset, prayerContent);
 
   @JsonKey(ignore: true)
   @override
@@ -214,7 +214,8 @@ abstract class _Prayer implements Prayer {
       {final String? title,
       final String? desc,
       @JsonKey(name: 'image_asset') final String? imageAsset,
-      @JsonKey(name: 'prayer_full') final PrayerFull? prayerFull}) = _$_Prayer;
+      @JsonKey(name: 'prayer_content')
+      final PrayerContent? prayerContent}) = _$_Prayer;
 
   factory _Prayer.fromJson(Map<String, dynamic> json) = _$_Prayer.fromJson;
 
@@ -226,43 +227,223 @@ abstract class _Prayer implements Prayer {
   @JsonKey(name: 'image_asset')
   String? get imageAsset;
   @override
-  @JsonKey(name: 'prayer_full')
-  PrayerFull? get prayerFull;
+  @JsonKey(name: 'prayer_content')
+  PrayerContent? get prayerContent;
   @override
   @JsonKey(ignore: true)
   _$$_PrayerCopyWith<_$_Prayer> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-PrayerFull _$PrayerFullFromJson(Map<String, dynamic> json) {
-  return _PrayerFull.fromJson(json);
+PrayerContent _$PrayerContentFromJson(Map<String, dynamic> json) {
+  return _PrayerContent.fromJson(json);
 }
 
 /// @nodoc
-mixin _$PrayerFull {
+mixin _$PrayerContent {
+  PrayerItem? get full => throw _privateConstructorUsedError;
+  List<PrayerItem>? get fragment => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PrayerContentCopyWith<PrayerContent> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PrayerContentCopyWith<$Res> {
+  factory $PrayerContentCopyWith(
+          PrayerContent value, $Res Function(PrayerContent) then) =
+      _$PrayerContentCopyWithImpl<$Res, PrayerContent>;
+  @useResult
+  $Res call({PrayerItem? full, List<PrayerItem>? fragment});
+
+  $PrayerItemCopyWith<$Res>? get full;
+}
+
+/// @nodoc
+class _$PrayerContentCopyWithImpl<$Res, $Val extends PrayerContent>
+    implements $PrayerContentCopyWith<$Res> {
+  _$PrayerContentCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? full = freezed,
+    Object? fragment = freezed,
+  }) {
+    return _then(_value.copyWith(
+      full: freezed == full
+          ? _value.full
+          : full // ignore: cast_nullable_to_non_nullable
+              as PrayerItem?,
+      fragment: freezed == fragment
+          ? _value.fragment
+          : fragment // ignore: cast_nullable_to_non_nullable
+              as List<PrayerItem>?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $PrayerItemCopyWith<$Res>? get full {
+    if (_value.full == null) {
+      return null;
+    }
+
+    return $PrayerItemCopyWith<$Res>(_value.full!, (value) {
+      return _then(_value.copyWith(full: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$_PrayerContentCopyWith<$Res>
+    implements $PrayerContentCopyWith<$Res> {
+  factory _$$_PrayerContentCopyWith(
+          _$_PrayerContent value, $Res Function(_$_PrayerContent) then) =
+      __$$_PrayerContentCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({PrayerItem? full, List<PrayerItem>? fragment});
+
+  @override
+  $PrayerItemCopyWith<$Res>? get full;
+}
+
+/// @nodoc
+class __$$_PrayerContentCopyWithImpl<$Res>
+    extends _$PrayerContentCopyWithImpl<$Res, _$_PrayerContent>
+    implements _$$_PrayerContentCopyWith<$Res> {
+  __$$_PrayerContentCopyWithImpl(
+      _$_PrayerContent _value, $Res Function(_$_PrayerContent) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? full = freezed,
+    Object? fragment = freezed,
+  }) {
+    return _then(_$_PrayerContent(
+      full: freezed == full
+          ? _value.full
+          : full // ignore: cast_nullable_to_non_nullable
+              as PrayerItem?,
+      fragment: freezed == fragment
+          ? _value._fragment
+          : fragment // ignore: cast_nullable_to_non_nullable
+              as List<PrayerItem>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_PrayerContent implements _PrayerContent {
+  _$_PrayerContent({this.full, final List<PrayerItem>? fragment})
+      : _fragment = fragment;
+
+  factory _$_PrayerContent.fromJson(Map<String, dynamic> json) =>
+      _$$_PrayerContentFromJson(json);
+
+  @override
+  final PrayerItem? full;
+  final List<PrayerItem>? _fragment;
+  @override
+  List<PrayerItem>? get fragment {
+    final value = _fragment;
+    if (value == null) return null;
+    if (_fragment is EqualUnmodifiableListView) return _fragment;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'PrayerContent(full: $full, fragment: $fragment)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_PrayerContent &&
+            (identical(other.full, full) || other.full == full) &&
+            const DeepCollectionEquality().equals(other._fragment, _fragment));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, full, const DeepCollectionEquality().hash(_fragment));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PrayerContentCopyWith<_$_PrayerContent> get copyWith =>
+      __$$_PrayerContentCopyWithImpl<_$_PrayerContent>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_PrayerContentToJson(
+      this,
+    );
+  }
+}
+
+abstract class _PrayerContent implements PrayerContent {
+  factory _PrayerContent(
+      {final PrayerItem? full,
+      final List<PrayerItem>? fragment}) = _$_PrayerContent;
+
+  factory _PrayerContent.fromJson(Map<String, dynamic> json) =
+      _$_PrayerContent.fromJson;
+
+  @override
+  PrayerItem? get full;
+  @override
+  List<PrayerItem>? get fragment;
+  @override
+  @JsonKey(ignore: true)
+  _$$_PrayerContentCopyWith<_$_PrayerContent> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+PrayerItem _$PrayerItemFromJson(Map<String, dynamic> json) {
+  return _PrayerItem.fromJson(json);
+}
+
+/// @nodoc
+mixin _$PrayerItem {
   String? get hijaiyah => throw _privateConstructorUsedError;
   String? get latin => throw _privateConstructorUsedError;
   String? get indo => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PrayerFullCopyWith<PrayerFull> get copyWith =>
+  $PrayerItemCopyWith<PrayerItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PrayerFullCopyWith<$Res> {
-  factory $PrayerFullCopyWith(
-          PrayerFull value, $Res Function(PrayerFull) then) =
-      _$PrayerFullCopyWithImpl<$Res, PrayerFull>;
+abstract class $PrayerItemCopyWith<$Res> {
+  factory $PrayerItemCopyWith(
+          PrayerItem value, $Res Function(PrayerItem) then) =
+      _$PrayerItemCopyWithImpl<$Res, PrayerItem>;
   @useResult
   $Res call({String? hijaiyah, String? latin, String? indo});
 }
 
 /// @nodoc
-class _$PrayerFullCopyWithImpl<$Res, $Val extends PrayerFull>
-    implements $PrayerFullCopyWith<$Res> {
-  _$PrayerFullCopyWithImpl(this._value, this._then);
+class _$PrayerItemCopyWithImpl<$Res, $Val extends PrayerItem>
+    implements $PrayerItemCopyWith<$Res> {
+  _$PrayerItemCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -294,22 +475,22 @@ class _$PrayerFullCopyWithImpl<$Res, $Val extends PrayerFull>
 }
 
 /// @nodoc
-abstract class _$$_PrayerFullCopyWith<$Res>
-    implements $PrayerFullCopyWith<$Res> {
-  factory _$$_PrayerFullCopyWith(
-          _$_PrayerFull value, $Res Function(_$_PrayerFull) then) =
-      __$$_PrayerFullCopyWithImpl<$Res>;
+abstract class _$$_PrayerItemCopyWith<$Res>
+    implements $PrayerItemCopyWith<$Res> {
+  factory _$$_PrayerItemCopyWith(
+          _$_PrayerItem value, $Res Function(_$_PrayerItem) then) =
+      __$$_PrayerItemCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? hijaiyah, String? latin, String? indo});
 }
 
 /// @nodoc
-class __$$_PrayerFullCopyWithImpl<$Res>
-    extends _$PrayerFullCopyWithImpl<$Res, _$_PrayerFull>
-    implements _$$_PrayerFullCopyWith<$Res> {
-  __$$_PrayerFullCopyWithImpl(
-      _$_PrayerFull _value, $Res Function(_$_PrayerFull) _then)
+class __$$_PrayerItemCopyWithImpl<$Res>
+    extends _$PrayerItemCopyWithImpl<$Res, _$_PrayerItem>
+    implements _$$_PrayerItemCopyWith<$Res> {
+  __$$_PrayerItemCopyWithImpl(
+      _$_PrayerItem _value, $Res Function(_$_PrayerItem) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -319,7 +500,7 @@ class __$$_PrayerFullCopyWithImpl<$Res>
     Object? latin = freezed,
     Object? indo = freezed,
   }) {
-    return _then(_$_PrayerFull(
+    return _then(_$_PrayerItem(
       hijaiyah: freezed == hijaiyah
           ? _value.hijaiyah
           : hijaiyah // ignore: cast_nullable_to_non_nullable
@@ -338,11 +519,11 @@ class __$$_PrayerFullCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PrayerFull implements _PrayerFull {
-  _$_PrayerFull({this.hijaiyah, this.latin, this.indo});
+class _$_PrayerItem implements _PrayerItem {
+  _$_PrayerItem({this.hijaiyah, this.latin, this.indo});
 
-  factory _$_PrayerFull.fromJson(Map<String, dynamic> json) =>
-      _$$_PrayerFullFromJson(json);
+  factory _$_PrayerItem.fromJson(Map<String, dynamic> json) =>
+      _$$_PrayerItemFromJson(json);
 
   @override
   final String? hijaiyah;
@@ -353,14 +534,14 @@ class _$_PrayerFull implements _PrayerFull {
 
   @override
   String toString() {
-    return 'PrayerFull(hijaiyah: $hijaiyah, latin: $latin, indo: $indo)';
+    return 'PrayerItem(hijaiyah: $hijaiyah, latin: $latin, indo: $indo)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PrayerFull &&
+            other is _$_PrayerItem &&
             (identical(other.hijaiyah, hijaiyah) ||
                 other.hijaiyah == hijaiyah) &&
             (identical(other.latin, latin) || other.latin == latin) &&
@@ -374,25 +555,25 @@ class _$_PrayerFull implements _PrayerFull {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PrayerFullCopyWith<_$_PrayerFull> get copyWith =>
-      __$$_PrayerFullCopyWithImpl<_$_PrayerFull>(this, _$identity);
+  _$$_PrayerItemCopyWith<_$_PrayerItem> get copyWith =>
+      __$$_PrayerItemCopyWithImpl<_$_PrayerItem>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PrayerFullToJson(
+    return _$$_PrayerItemToJson(
       this,
     );
   }
 }
 
-abstract class _PrayerFull implements PrayerFull {
-  factory _PrayerFull(
+abstract class _PrayerItem implements PrayerItem {
+  factory _PrayerItem(
       {final String? hijaiyah,
       final String? latin,
-      final String? indo}) = _$_PrayerFull;
+      final String? indo}) = _$_PrayerItem;
 
-  factory _PrayerFull.fromJson(Map<String, dynamic> json) =
-      _$_PrayerFull.fromJson;
+  factory _PrayerItem.fromJson(Map<String, dynamic> json) =
+      _$_PrayerItem.fromJson;
 
   @override
   String? get hijaiyah;
@@ -402,6 +583,6 @@ abstract class _PrayerFull implements PrayerFull {
   String? get indo;
   @override
   @JsonKey(ignore: true)
-  _$$_PrayerFullCopyWith<_$_PrayerFull> get copyWith =>
+  _$$_PrayerItemCopyWith<_$_PrayerItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
