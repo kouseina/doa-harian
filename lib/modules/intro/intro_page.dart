@@ -4,10 +4,34 @@ import 'package:doa_harian/routes/app_router.dart';
 import 'package:doa_harian/utils/assets.dart';
 import 'package:doa_harian/widgets/main_button.dart';
 import 'package:flutter/material.dart';
+import 'dart:developer' as developer;
 
 @RoutePage()
-class IntroPage extends StatelessWidget {
+class IntroPage extends StatefulWidget {
   const IntroPage({super.key});
+
+  @override
+  State<IntroPage> createState() => _IntroPageState();
+}
+
+class _IntroPageState extends State<IntroPage> {
+  late TextEditingController nameController;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    nameController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+
+    nameController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +64,7 @@ class IntroPage extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                       fontSize: 16,
                     ),
+                    controller: nameController,
                     textAlign: TextAlign.center,
                     textCapitalization: TextCapitalization.characters,
                     decoration: InputDecoration(
@@ -76,7 +101,9 @@ class IntroPage extends StatelessWidget {
                   ),
                   MainButton(
                     onTap: () {
-                      context.router.push(const HomeRoute());
+                      if (nameController.text.isEmpty) return;
+
+                      context.router.push(HomeRoute(name: nameController.text));
                     },
                     text: "MULAI BELAJAR DOA",
                   ),

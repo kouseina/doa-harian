@@ -12,7 +12,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({super.key, required this.name});
+
+  final String name;
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -60,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                         height: 4,
                       ),
                       Text(
-                        "Raihan Athaya Fawwaz",
+                        widget.name,
                         style:
                             Theme.of(context).textTheme.titleMedium?.copyWith(
                                   fontWeight: FontWeight.w800,
@@ -69,7 +71,9 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      context.router.back();
+                    },
                     child: Container(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 12, vertical: 8),
