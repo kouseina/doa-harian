@@ -232,6 +232,27 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 48),
+              decoration: BoxDecoration(
+                color: AppColors.purple2,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2),
+                    spreadRadius: 2,
+                    blurRadius: 20,
+                    offset: const Offset(0, -10), // changes position of shadow
+                  ),
+                ],
+              ),
+              child: MainButton(
+                onTap: () {
+                  context.router.push(const QuizRoute());
+                },
+                linearGradient: AppColors.greenGradient,
+                text: "MULAI KUIS SEKARANG",
+              ),
+            ),
           ],
         ),
       ),

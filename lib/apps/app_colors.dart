@@ -45,4 +45,13 @@ class AppColors {
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
   );
+
+  static LinearGradient greenGradient = const LinearGradient(
+    colors: [
+      Color(0xff37DA5B),
+      Color(0xff00A324),
+    ],
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+  );
 }

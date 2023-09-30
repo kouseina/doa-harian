@@ -37,6 +37,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const IntroPage(),
       );
     },
+    QuizRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const QuizPage(),
+      );
+    },
   };
 }
 
@@ -101,6 +107,20 @@ class IntroRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'IntroRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [QuizPage]
+class QuizRoute extends PageRouteInfo<void> {
+  const QuizRoute({List<PageRouteInfo>? children})
+      : super(
+          QuizRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'QuizRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

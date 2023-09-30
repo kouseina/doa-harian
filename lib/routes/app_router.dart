@@ -3,6 +3,7 @@ import 'package:doa_harian/models/prayer.dart';
 import 'package:doa_harian/modules/detail/detail_page.dart';
 import 'package:doa_harian/modules/home/home_page.dart';
 import 'package:doa_harian/modules/intro/intro_page.dart';
+import 'package:doa_harian/modules/quiz/quiz_page.dart';
 import 'package:flutter/material.dart';
 part 'app_router.gr.dart';
 
@@ -13,5 +14,6 @@ class AppRouter extends _$AppRouter {
         AutoRoute(page: IntroRoute.page, initial: true),
         AutoRoute(page: HomeRoute.page),
         AutoRoute(page: DetailRoute.page),
+        AutoRoute(page: QuizRoute.page),
       ];
 }
