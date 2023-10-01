@@ -8,7 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
 
 class SecondPage extends StatefulWidget {
-  const SecondPage({super.key, required this.prayer, required this.assetsAudioPlayer});
+  const SecondPage(
+      {super.key, required this.prayer, required this.assetsAudioPlayer});
   final Prayer prayer;
   final AssetsAudioPlayer assetsAudioPlayer;
 
@@ -70,6 +71,7 @@ class _SecondPageState extends State<SecondPage> {
                       fontFamily: "NotoSansArabic",
                       color: AppColors.orange,
                     ),
+                textAlign: TextAlign.center,
               ),
             ),
             const SizedBox(
