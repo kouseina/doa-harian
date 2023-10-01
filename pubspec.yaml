@@ -41,6 +41,7 @@ dependencies:
   json_annotation: ^4.8.1
   flutter_bloc: ^8.1.3
   bloc: ^8.1.2
+  assets_audio_player: ^3.1.1
 
 dev_dependencies:
   flutter_test:
@@ -73,6 +74,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/jsons/
+    - assets/audios/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

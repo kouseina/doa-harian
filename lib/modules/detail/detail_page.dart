@@ -1,3 +1,4 @@
+import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:doa_harian/apps/app_colors.dart';
 import 'package:doa_harian/bloc/counter_bloc.dart';
@@ -22,6 +23,7 @@ class DetailPage extends StatefulWidget {
 class _DetailPageState extends State<DetailPage> {
   late CounterBloc bloc;
   final pageController = PageController();
+  final assetsAudioPlayer = AssetsAudioPlayer();
 
   @override
   void initState() {
@@ -46,9 +48,15 @@ class _DetailPageState extends State<DetailPage> {
       body: PageView(
         scrollDirection: Axis.vertical,
         controller: pageController,
+        onPageChanged: (value) {
+          assetsAudioPlayer.stop();
+        },
         children: [
           FirstPage(pageController: pageController),
-          SecondPage(prayer: widget.prayer),
+          SecondPage(
+            prayer: widget.prayer,
+            assetsAudioPlayer: assetsAudioPlayer,
+          ),
         ],
       ),
     );
