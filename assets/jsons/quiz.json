@@ -1,0 +1,48 @@
+{
+    "data": [
+        {
+            "question_1": "اَللّٰهُمَّ بَارِكْ لَنَا فِيْمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ",
+            "question_2": "BACAAN DIATAS MERUPAKAN DOA ...",
+            "option": [
+                "DOA SEBELUM MAKAN",
+                "DOA SESUDAH MAKAN",
+                "DOA MASUK MASJID",
+                "DOA KELUAR MASJID"
+            ],
+            "answer": 0
+        },
+        {
+            "question_1": "اَلْحَمْدُ ِللهِ الَّذِىْ اَطْعَمَنَا وَسَقَانَا وَجَعَلَنَا مُسْلِمِيْنَ",
+            "question_2": "BACAAN DIATAS MERUPAKAN DOA ...",
+            "option": [
+                "DOA SEBELUM MAKAN",
+                "DOA MASUK MASJID",
+                "DOA SESUDAH MAKAN",
+                "DOA KELUAR MASJID"
+            ],
+            "answer": 2
+        },
+        {
+            "question_1": "اللَّهُمَّ افْتَحْ لي أبْوَابَ رَحْمَتِكَ",
+            "question_2": "BACAAN DIATAS MERUPAKAN DOA ...",
+            "option": [
+                "DOA SEBELUM MAKAN",
+                "DOA KELUAR MASJID",
+                "DOA SESUDAH MAKAN",
+                "DOA MASUK MASJID"
+            ],
+            "answer": 3
+        },
+        {
+            "question_1": "اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ",
+            "question_2": "BACAAN DIATAS MERUPAKAN DOA ...",
+            "option": [
+                "DOA KELUAR MASJID",
+                "DOA SESUDAH MAKAN",
+                "DOA MASUK MASJID",
+                "DOA SEBELUM MAKAN"
+            ],
+            "answer": 0
+        }
+    ]
+}

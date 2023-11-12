@@ -14,4 +14,5 @@ class Assets {
   static AssetImage icBackPng = const AssetImage("assets/icons/ic_back.png");
 
   static String jsonPrayer = "assets/jsons/prayer.json";
+  static String jsonQuiz = "assets/jsons/quiz.json";
 }
